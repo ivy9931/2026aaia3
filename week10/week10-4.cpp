@@ -1,18 +1,18 @@
-// week10-4.cpp ¾Ç²ß­pµe Math ²Ä7ÃD
-// LeetCode 43. Multiply Strings «Ü¤jªº¼Æ¦r­¼ªk, ¥Î¦r¦ê
+// week10-4.cpp å­¸ç¿’è¨ˆç•« Math ç¬¬7é¡Œ
+// LeetCode 43. Multiply Strings å¾ˆå¤§çš„æ•¸å­—ä¹˜æ³•, ç”¨å­—ä¸²
 class Solution {
 public:
-    vector<int> myStrVec(string num){ //¦Û¤vµo©ú¨ç¥Ü, ¦r¦êÅÜ°}¦C
+    vector<int> myStrVec(string num){ //è‡ªå·±ç™¼æ˜å‡½ç¤º, å­—ä¸²è®Šé™£åˆ—
         vector<int> ans;
-        for(int i=num.length()-1; i>=0; i-- ){ //­Ë¹L¨Óªº°j°é
-           ans.push_back(num[i] - '0'); //¦r¥ÀÅÜ¼Æ¦r
+        for(int i=num.length()-1; i>=0; i-- ){ //å€’éä¾†çš„è¿´åœˆ
+           ans.push_back(num[i] - '0'); //å­—æ¯è®Šæ•¸å­—
         }
         return ans;
     }
     string multiply(string num1, string num2) {
-        if(num1=="0" || num2=="0") return "0"; //¥i´c,³ºµM¦³"0" ²V¦b¸Ì­±, ª½±µ"0" µ²§ô
+        if(num1=="0" || num2=="0") return "0"; //å¯æƒ¡,ç«Ÿç„¶æœ‰"0" æ··åœ¨è£¡é¢, ç›´æ¥"0" çµæŸ
         vector<int> a = myStrVec(num1);
-        vector<int> b = myStrVec(num2);//§â¦r¦êÅÜ(­Ë¹L¨Óªº)°}¦C
+        vector<int> b = myStrVec(num2);//æŠŠå­—ä¸²è®Š(å€’éä¾†çš„)é™£åˆ—
         vector<int> ans(a.size()+b.size());
 
         for(int i=0; i<a.size(); i++){
@@ -22,7 +22,7 @@ public:
                 ans [i+j] = ans[i+j] % 10;
             }
         }
-        //§âµª®×, (­Ë¹L¨Ó)ÅÜ¦^¦r¦ê
+        //æŠŠç­”æ¡ˆ, é€ä¸€(å€’éä¾†)è®Šå›å­—ä¸²
         if(ans[ans.size()-1]==0) ans.pop_back();
         if(ans.size()==0) return "0";
         string ans2 = "";
